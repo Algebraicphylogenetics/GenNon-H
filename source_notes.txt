@@ -20,3 +20,6 @@
 * state.cpp           Data structure for the states.
 * state_list.cpp      Data structure for a list of all states in a tree (on the leaves and the hidden)
 * tree.cpp            Data structure for trees (as a list of edges).
+
+seqUtil.cpp, Newickform.cpp   modified version of the tree parser of Yu-Wei Wu (Indiana Univ), http://yuweibioinfo.blogspot.com/2008/10/newick-tree-parser-in-c-make-use-of.html
+
