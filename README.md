@@ -4,7 +4,7 @@ It simulates Multiple Seq. Alignments (MSA) under discrete-time models for a pre
 
 ### Dependencies
 
-The package used version 1.47.0 of the [boost] library for parts of the code involving maths and random generation (downloaded from: [boost source]). As such, use, modification and distribution are subject to the Boost Software License, Version 1.0. (See [LICENSE]).
+The package used version 1.47.0 of the [boost] library for parts of the code involving maths and random generation (downloaded from: [boost source]). As such, use, modification and distribution are subject to the Boost Software License, Version 1.0. (See [boost license]).
 
 ### Compilation and command line use
 To compile this code you need a development environment with the GNU gcc compiler ( 'make').
@@ -40,9 +40,9 @@ Output matrices are listed acc. to the order outlined above:
 1. matrices are first assigned to the leaf edges (bottom branches)
 2. top-down left to right branch order.
 
-	[boost]:	     http://www.boost.org/
-	[boost source]: http://sourceforge.net/projects/boost/files/boost/1.47.0/
-	[LICENSE]:http://www.boost.org/LICENSE_1_0.txt
-	[Newick]: http://evolution.genetics.washington.edu/phylip/newicktree.html
+[boost]:	     http://www.boost.org/
+[boost source]: http://sourceforge.net/projects/boost/files/boost/1.47.0/
+[boost license]: http://www.boost.org/LICENSE_1_0.txt
+[Newick]: http://evolution.genetics.washington.edu/phylip/newicktree.html
 
 <sub> *This is a free software and it can be redistributed, modified or else as given by the terms of the GNU General Public License.* </sub>
