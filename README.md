@@ -49,6 +49,6 @@ Output matrices are listed acc. to the order outlined above:
 > Kedzierska A.M. and Casanellas M.: “ GenNon-h: Simulating multiple sequence alignments under the non-homogeneous dna models." (BMC Bioinformatics 2012, 13:216)
 
 For methods of parameter estimation of non-homogeneous alignments:
-* Kedzierska A.M. and Casanellas M.: “EM for parameter estimation of Markov models on trees” (revision).
+> Kedzierska A.M. and Casanellas M.: “EM for parameter estimation of Markov models on trees” (revision).
 
 <sub> *This is a free software and it can be redistributed, modified or else as given by the terms of the GNU General Public License.* </sub>
