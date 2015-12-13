@@ -1,8 +1,8 @@
 # Overview
-** GenNon-H ** is an efficient tool to generate DNA MSAs on a given phylogenetic tree.
+**GenNon-H** is an efficient tool to generate DNA MSAs on a given phylogenetic tree.
 
 A number of software packages are available to generate DNA multiple sequence alignments (MSAs) evolving under continuous-time Markov processes on phylogenetic trees. On the other hand, methods of simulating the DNA MSA directly from the transition matrices do not exist. Moreover, existing software restricts to the time-reversible models and it is not optimized to generate non-homogeneous data (i.e. placing distinct substitution rates at different lineages).
-** GenNon-H ** generates MSAs evolving under discrete-time Markov processes on phylogenetic trees, directly from probability substitution matrices. Based on the input model and a phylogenetic tree in the Newick format (with branch lengths measured as the expected number of substitutions per site), the algorithm produces DNA alignments of desired length. ** GenNon-h ** provides the user with the nonstationary or non-homogeneous phylogenetic data that is wellsuited for testing complex biological hypotheses, exploring the limits of the reconstruction algorithms and theirrobustness to such models.
+**GenNon-H** generates MSAs evolving under discrete-time Markov processes on phylogenetic trees, directly from probability substitution matrices. Based on the input model and a phylogenetic tree in the Newick format (with branch lengths measured as the expected number of substitutions per site), the algorithm produces DNA alignments of desired length. **GenNon-h** provides the user with the nonstationary or non-homogeneous phylogenetic data that is wellsuited for testing complex biological hypotheses, exploring the limits of the reconstruction algorithms and theirrobustness to such models.
 
 ### Dependencies
 
