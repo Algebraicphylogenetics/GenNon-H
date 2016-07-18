@@ -1,13 +1,12 @@
-CC=g++
+CXX=g++-5
+LD=g++-5
 
-# FLAGS=-Wall
-# FLAGS=-Wall -ggdb
 FLAGS=-O3 -Wall
 
-MAINS=GenNon-h.o 
+MAINS=build/GenNon-h.o
 
-TARGETS=$(patsubst %.o,%,$(MAINS))
-OBJ=$(filter-out $(MAINS),$(patsubst %.cpp,%.o,$(wildcard *.cpp)))
+TARGETS=$(patsubst build/%.o, %, $(MAINS))
+OBJ=$(patsubst src/%.cpp, build/%.o,$(wildcard src/*.cpp)) #
 
 DEPS=$(wildcard *.h)
 SRC=$(wildcard *.cpp)
@@ -18,23 +17,23 @@ OTHER=Makefile README
 
 FILES=$(SRC) $(DEPS) $(INC) $(DATA) $(OTHER)
 
-CFLAGS=-I $(INC) $(FLAGS)
+CFLAGS=-I $(INC) $(FLAGS) --std=c++11
 
 .PHONY: clean src-pkg
 
 all: $(TARGETS)
 
 # Rule for object files
-%.o: %.cpp $(DEPS)
-	$(CC) -c -o $@ $< $(CFLAGS)
+build/%.o: src/%.cpp $(DEPS)
+	$(CXX) -c -o $@ $< $(CFLAGS)
 
 # Rule for targets
-$(TARGETS): %: %.o $(OBJ)
-	$(CC) -o $@ $< $(OBJ) $(CFLAGS)
+$(TARGETS): $(OBJ)
+	$(LD) -o $@ $^ $(LDFLAGS)
 
 
 clean:
-	rm -f *.o *~ $(TARGETS) 
+	rm -f src/*.o *~ $(TARGETS)
 
 src-pkg: $(TARGETS) $(DEPS)
-	tar czf $(FILES)
+	tar czf GenNon-h.tar.gz $(FILES)
