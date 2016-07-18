@@ -51,17 +51,8 @@ namespace boost
             int k = itrunc(l2);
             if(k == 0)
                k = 1;
-            T pois;
-            if(k == 0)
-            {
                // Starting Poisson weight:
-               pois = exp(-l2);
-            }
-            else
-            {
-               // Starting Poisson weight:
-               pois = gamma_p_derivative(T(k+1), l2, pol);
-            }
+            T pois = gamma_p_derivative(T(k+1), l2, pol);
             if(pois == 0)
                return init_val;
             // recurance term:
@@ -282,8 +273,8 @@ namespace boost
             T operator()(const T& x)
             {
                return comp ?
-                  target - cdf(complement(dist, x))
-                  : cdf(dist, x) - target;
+                  T(target - cdf(complement(dist, x)))
+                  : T(cdf(dist, x) - target);
             }
 
          private:
@@ -524,7 +515,11 @@ namespace boost
          T non_central_beta_pdf(T a, T b, T lam, T x, T y, const Policy& pol)
          {
             BOOST_MATH_STD_USING
-               using namespace boost::math;
+            //
+            // Special cases:
+            //
+            if((x == 0) || (y == 0))
+               return 0;
             //
             // Variables come first:
             //
@@ -664,7 +659,7 @@ namespace boost
 #else
             value_type result = boost::math::tools::sum_series(s, boost::math::policies::get_epsilon<value_type, Policy>(), max_iter);
 #endif
-            policies::check_series_iterations(function, max_iter, pol);
+            policies::check_series_iterations<T>(function, max_iter, pol);
             return policies::checked_narrowing_cast<T, Policy>(result, function);
          }
 
