@@ -1,9 +1,9 @@
 /*
  *  random.cpp
- *  
+ *
  *  Created by Ania M. Kedzierska on 11/11/11.
- *  Copyright 2011 Politecnic University of Catalonia, Center for Genomic Regulation.  This is program can be redistributed, modified or else as given by the terms of the GNU General Public License. 
- *  
+ *  Copyright 2011 Politecnic University of Catalonia, Center for Genomic Regulation.  This is program can be redistributed, modified or else as given by the terms of the GNU General Public License.
+ *
  */
 
 #include <ctime>
@@ -16,7 +16,7 @@
 #include <boost/random/discrete_distribution.hpp>
 
 
-boost::random::mt19937 random_gen((unsigned int) std::time(0));  // Random number generator
+boost::random::mt19937 random_gen((unsigned int) std::time(NULL)+getpid());  // Random number generator
 
 boost::random::uniform_real_distribution<double> uni_real_dist;  // Uniform distribution
 boost::random::uniform_int_distribution<long> uni_int_dist;      // Uniform distribution
@@ -30,7 +30,7 @@ void random_initialize(unsigned int seed) {
 
 // Initialize with a time derived seed
 void random_initialize() {
-  random_initialize((unsigned int) std::time(0));
+  random_initialize((unsigned int) std::time(NULL)+getpid());
 }
 
 
