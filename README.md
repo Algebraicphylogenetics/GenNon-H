@@ -50,5 +50,3 @@ Output matrices are listed acc. to the order outlined above:
 
 For methods of parameter estimation of non-homogeneous alignments:
 > Kedzierska A.M. and Casanellas M.: “ EM for parameter estimation of Markov models on trees ” (revision).
-
-<sub> *This is a free software and it can be redistributed, modified or else as given by the terms of the GNU General Public License.* </sub>
